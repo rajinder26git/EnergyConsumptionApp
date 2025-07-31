@@ -8,3 +8,5 @@ pydeck
 altair
 pillow
 requests
+seaborn
+xgboost
