@@ -1,9 +1,10 @@
 streamlit==1.47.1
-matplotlib.pyplot
+matplotlib
 scikit-learn
 joblib
 pandas
 numpy
-altair
 pydeck
-train_test_split
+altair
+pillow
+requests
