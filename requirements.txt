@@ -1,0 +1,9 @@
+streamlit==1.47.1
+matplotlib
+scikit-learn
+joblib
+pandas
+numpy
+altair
+pydeck
+train_test_split
