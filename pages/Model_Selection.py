@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
@@ -124,3 +125,10 @@ results["TCN"] = train_tcn()
 print("\n🔍 Model Performance (MSE, R2):\n")
 for model_name, (mse, r2) in results.items():
     print(f"{model_name:<15} | MSE: {mse:.2f} | R²: {r2:.4f}")
+    df_results = pd.DataFrame([
+    {"Model": model_name, "MSE": mse, "R²": r2}
+    for model_name, (mse, r2) in results.items()
+])
+
+st.subheader("🔍 Model Performance (MSE, R²):")
+st.table(df_results)
