@@ -16,3 +16,4 @@ catboost
 lightgbm 
 prophet 
 tensorflow
+tcn 
