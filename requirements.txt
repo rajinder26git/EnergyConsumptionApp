@@ -12,3 +12,7 @@ seaborn
 xgboost
 shap                                                             
 joblib
+catboost 
+lightgbm 
+prophet 
+tensorflow
