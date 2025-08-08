@@ -21,6 +21,14 @@ df = pd.read_csv("dataset.csv")
 df['settlement_date'] = pd.to_datetime(df['settlement_date'])
 df = df[df["england_wales_demand"] > 100]
 df.fillna(method="ffill", inplace=True)
+
+Q1 = df["england_wales_demand"].quantile(0.25)
+Q3 = df["england_wales_demand"].quantile(0.75)
+IQR = Q3 - Q1
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+df = df[(df["england_wales_demand"] >= lower_bound) & (df["england_wales_demand"] <= upper_bound)]
+
 df['year'] = df['settlement_date'].dt.year
 df['month'] = df['settlement_date'].dt.month
 df['day'] = df['settlement_date'].dt.day
