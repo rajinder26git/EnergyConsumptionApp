@@ -10,3 +10,5 @@ pillow
 requests
 seaborn
 xgboost
+shap                                                             
+joblib
